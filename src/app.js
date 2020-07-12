@@ -1,5 +1,6 @@
 import { daysLoop } from "./utils";
 import { fetchFunction } from "./fetch";
+
 import "./styles.css";
 
 let select = document.getElementById("select");

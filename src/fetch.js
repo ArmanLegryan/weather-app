@@ -14,6 +14,7 @@ export function fetchFunction() {
       let tempVal = data["main"]["temp"];
       let minTempVal = data["main"]["temp_min"];
       let maxTempVal = data["main"]["temp_max"];
+      let imageVal = data["weather"]["icon"]
 
       name.innerHTML = nameVal;
       desc.innerHTML = descVal;
@@ -21,5 +22,6 @@ export function fetchFunction() {
 
       min_temp.innerHTML = `Min temp: ${minTempVal}`;
       max_temp.innerHTML = `Max temp: ${maxTempVal}`;
+
     });
 }
