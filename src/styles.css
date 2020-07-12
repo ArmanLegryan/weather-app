@@ -41,6 +41,8 @@ body {
   cursor: pointer;
   outline: none;
   border: none;
+
+  font-size: 15px;
 }
 
 .days {
@@ -59,12 +61,17 @@ body {
   margin-right: 10px;
   box-shadow: 0px 0px 0px 0px #888888;
   transition: box-shadow 0.3s;
+  transition: border-radius 0.08s;
 
   color: #ffffff;
 }
 
 .days div:hover {
   box-shadow: 0px 0px 20px 10px #888888;
+}
+
+.days div:active {
+  border-radius: 40%;
 }
 
 .showed_day {
@@ -74,6 +81,8 @@ body {
 
 .display {
   text-align: center;
+  width: 600px;
+  margin: 0 auto;
 }
 
 .display p {
@@ -90,4 +99,12 @@ body {
 
 .desc {
   font-size: 20px;
+}
+
+.min_max {
+  width: 550px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  font-size: 30px;
 }
