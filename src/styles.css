@@ -48,30 +48,25 @@ body {
 .days {
   display: flex;
   justify-content: space-between;
-  width: 700px;
+  width: 800px;
 }
 
 .days div {
   border: 1px solid #f9f2ea;
   border-radius: 5%;
-  width: 100px;
+  width: 110px;
   min-height: 50px;
-  padding: 5px 5px;
+  padding: 15px 5px;
   text-align: center;
   margin-right: 10px;
   box-shadow: 0px 0px 0px 0px #888888;
-  transition: box-shadow 0.3s;
-  transition: border-radius 0.08s;
+  transition: 0.3s ease;
 
   color: #ffffff;
 }
 
 .days div:hover {
   box-shadow: 0px 0px 20px 10px #888888;
-}
-
-.days div:active {
-  border-radius: 40%;
 }
 
 .showed_day {
@@ -107,4 +102,13 @@ body {
   justify-content: space-between;
   margin: 0 auto;
   font-size: 30px;
+}
+
+.active {
+  color: #fff !important;
+}
+
+.clicked {
+  border-color: #123d50 !important;
+  color: #123d50 !important;
 }

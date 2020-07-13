@@ -11,10 +11,6 @@ export function fetchFunction() {
     return Math.round(val - 273.15);
   }
 
-  // api.openweathermap.org/data/2.5/forecast/daily?q=${select.value}&cnt=7&appid=${api}
-
-  // api.openweathermap.org/data/2.5/weather?q=${select.value}&appid=${api}
-
   fetch(
     `https://api.openweathermap.org/data/2.5/weather?q=${select.value}&appid=${api}`
   )

@@ -54,5 +54,22 @@ export function daysLoop() {
     div.style.cursor = "pointer";
     div.innerHTML = `${day}, ${month} ${tomorrow}`;
     days.appendChild(div);
+    div.classList.add("active");
   }
+
+  let elements = document.getElementsByClassName("active");
+
+  for (let i = 0; i < elements.length; i++) {
+    elements[i].onclick = function () {
+      let el = elements[0];
+      while (el) {
+        if (el.tagName === "DIV") {
+          el.classList.remove("clicked");
+        }
+        el = el.nextSibling;
+      }
+      this.classList.add("clicked");
+    };
+  }
+  document.getElementsByClassName("active")[0].classList.add("clicked");
 }
