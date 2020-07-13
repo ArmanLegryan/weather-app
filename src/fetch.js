@@ -5,8 +5,19 @@ export function fetchFunction() {
   let min_temp = document.querySelector(".min_temp");
   let max_temp = document.querySelector(".max_temp");
 
-  fetch(`https://api.openweathermap.org/data/2.5/weather?q=${select.value}&appid=365d86f409eb1f872c4e1683c3478afa
-    `)
+  let api = `365d86f409eb1f872c4e1683c3478afa`;
+
+  function toCelsius(val) {
+    return Math.round(val - 273.15);
+  }
+
+  // api.openweathermap.org/data/2.5/forecast/daily?q=${select.value}&cnt=7&appid=${api}
+
+  // api.openweathermap.org/data/2.5/weather?q=${select.value}&appid=${api}
+
+  fetch(
+    `https://api.openweathermap.org/data/2.5/weather?q=${select.value}&appid=${api}`
+  )
     .then((response) => response.json())
     .then((data) => {
       let nameVal = data["name"];
@@ -14,14 +25,12 @@ export function fetchFunction() {
       let tempVal = data["main"]["temp"];
       let minTempVal = data["main"]["temp_min"];
       let maxTempVal = data["main"]["temp_max"];
-      let imageVal = data["weather"]["icon"]
 
       name.innerHTML = nameVal;
       desc.innerHTML = descVal;
-      temp.innerHTML = tempVal;
+      temp.innerHTML = `${toCelsius(tempVal)}&#8451;`;
 
-      min_temp.innerHTML = `Min temp: ${minTempVal}`;
-      max_temp.innerHTML = `Max temp: ${maxTempVal}`;
-
+      min_temp.innerHTML = `Min temp: ${toCelsius(minTempVal)}&#8451;`;
+      max_temp.innerHTML = `Max temp: ${toCelsius(maxTempVal)}&#8451;`;
     });
 }
