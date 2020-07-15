@@ -7,9 +7,7 @@ export function fetchFunction() {
 
   let api = `365d86f409eb1f872c4e1683c3478afa`;
 
-  function toCelsius(val) {
-    return Math.round(val - 273.15);
-  }
+  let toCelsius = (val) => Math.round(val - 273.15);
 
   fetch(
     `https://api.openweathermap.org/data/2.5/weather?q=${select.value}&appid=${api}`
